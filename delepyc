@@ -1,0 +1,9 @@
+def search(path):
+    for dirpath, dirnames, filenames in os.walk(path):
+        for filename in filenames:
+            if os.path.splitext(filename)[1] == '.pyc':
+                filepath = os.path.join(dirpath, filename)
+                os.remove(filepath)
+
+if __name__=="__main__":
+    search('path')
